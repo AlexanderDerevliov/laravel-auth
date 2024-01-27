@@ -22,7 +22,7 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->created_at}}</td>
                     <td>
-
+                       <a class="btn btn-success" href="{{ route('admin.posts.show', ['post' => $post->slug]) }}">Dettagli</a>
 
 
                     </td>
