@@ -1,0 +1,36 @@
+@extends('layouts.admin');
+
+@section('content')
+
+<div class="container mt-5" >
+
+    <h2>La lista dei post</h2>
+
+    <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Titolo</th>
+            <th scope="col">Data</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach($posts as $post)
+                 <tr>
+                    <th scope="row">{{ $post->id  }}</th>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->created_at}}</td>
+                    <td>
+
+
+
+                    </td>
+                 </tr>
+            @endforeach
+        </tbody>
+      </table>
+
+</div>
+    
+@endsection
