@@ -6,6 +6,10 @@
 
     <h2>La lista dei post</h2>
 
+    <div class="text-end">
+        <a class="btn btn-secondary" href="{{ route('admin.posts.create') }}">Crea un nuovo post</a>
+    </div>
+
     <table class="table table-striped mt-4">
         <thead>
           <tr>
