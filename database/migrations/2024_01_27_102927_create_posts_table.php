@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nomi', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('cognome');
-            $table->string('sopranome');
+            $table->string('title')->unique();
+            $table->text('content')->nullable();
+            $table->string('slug')->unique();
+
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nomi');
+        Schema::dropIfExists('posts');
     }
 };
