@@ -39,7 +39,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $form_data = $request->validate();
+        $form_data = $request->validated();
         $post = new Post();
         $post->fill($form_data);
         $post->slug = Str::slug($post->title, '-');
