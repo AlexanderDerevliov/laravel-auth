@@ -6,7 +6,7 @@
 
         <h2>Crea un nuovo post</h2>
 
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                   @foreach ($errors->all() as $error)
@@ -17,7 +17,7 @@
 
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
         <form class="mt-5" action="{{ route('admin.posts.store') }}" method="POST">
 
@@ -25,7 +25,11 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
+
+                @error('title')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
 
