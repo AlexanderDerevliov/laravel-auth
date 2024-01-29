@@ -27,6 +27,8 @@
                     <td>{{$post->created_at}}</td>
                     <td>
                        <a class="btn btn-success" href="{{ route('admin.posts.show', ['post' => $post->slug]) }}">Dettagli</a>
+                       <a class="btn btn-warning" href="{{ route('admin.posts.edit', ['post' => $post->slug]) }}">Modifica</a>
+
 
 
                     </td>

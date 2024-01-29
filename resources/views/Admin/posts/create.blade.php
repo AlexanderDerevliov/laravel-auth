@@ -5,7 +5,7 @@
     <div class="container mt-5">
 
         <h2>Crea un nuovo post</h2>
-
+        
         {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
